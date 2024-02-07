@@ -4,7 +4,7 @@ services:
     container_name: qlik-script-effort-analyzer
     build: .
     ports:
-      - "2000:2000"
+      - "3000:3000"
     environment:
       - NODE_ENV=production
     volumes:
