@@ -18,6 +18,6 @@ RUN npm install
 COPY . .
 
 # Your application binds to port 2000, so use the EXPOSE instruction to have it mapped by the docker daemon
-EXPOSE 2000
+EXPOSE 3000
 
 CMD [ "node", "index.js" ]
