@@ -72,6 +72,10 @@ async function getScriptDetails(script) {
     }
 }
 
+app.get('/health', (req, res) => {
+    res.send("Running");
+});
+
 app.get('/getScriptDetails/:appId', async (req, res) => {
     try {
         const { appId } = req.params;
