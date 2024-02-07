@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    container_name: qlik-script-effort-analyzer
+    build: .
+    ports:
+      - "2000:2000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./.env:/usr/src/app/.env
+      - ./schema.json:/usr/src/app/schema.json

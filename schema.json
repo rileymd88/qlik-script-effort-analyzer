@@ -1,0 +1,43 @@
+{
+  "tables": [
+    {
+      "tableOperation": "string (The type of table operation)",
+      "scriptLine": "number (The script line number where the field appears)",
+      "name": "string (The final name of the table)",
+      "originalName": "string (The original name of the table)",
+      "source": "string (The source where the table is loaded from)",
+      "resident": "boolean (If the table has been loaded from a resident load)",
+      "filters": "boolean (If there are any filters on the table)",
+      "filterStatements": ["string (A list of the specific filter types)"],
+      "groupBy": "boolean (If there is a group by statement being used)",
+      "groupByFields": [
+        "string (Which fields are included in the group by statement if it exists)"
+      ],
+      "orderBy": "boolean (If the table is being ordered by)",
+      "orderByFields": [
+        "string (Which fields are included in the order by statement if it exists)"
+      ],
+      "orderSequence": "string (Order of the order by statement)",
+      "tableDropped": "boolean (If the table is eventually dropped)",
+      "crossTable": "boolean (If a cross table load is being done)",
+      "generic": "boolean (If a generic load is being done)",
+      "fields": [
+        {
+          "name": "string (The final name of the field)",
+          "originalName": "string (The original name of the field)",
+          "operations": ["string (A list of operations used on the field)"],
+          "variablesUsed": ["string (A list of variables used on the field)"],
+          "applyMaps": ["string (A list of applyMap names used on the field)"],
+          "scriptLine": "number (The script line number where the field appears)"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "string (Name of the variable)",
+      "definition": "string (Definition of the variable)",
+      "scriptLine": "number (The script line that it appears on)"
+    }
+  ]
+}
