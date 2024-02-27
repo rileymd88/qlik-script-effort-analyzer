@@ -11,7 +11,7 @@ services:
     volumes:
       - ./.env:/usr/src/app/.env
       - ./schema.json:/usr/src/app/schema.json
-  app:
+  proxy:
     container_name: proxy
     image: 'jc21/nginx-proxy-manager:latest'
     restart: always
