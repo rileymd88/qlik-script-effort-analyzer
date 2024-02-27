@@ -21,4 +21,6 @@ services:
       - '443:443'
     volumes:
       - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt      
+      - ./letsencrypt:/etc/letsencrypt
+      - /home/qmi/common/qmicerts:/certs
+
