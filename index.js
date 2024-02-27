@@ -86,7 +86,7 @@ async function getScriptDetails(script, appId) {
     }
 }
 
-app.get('/health', (req, res) => {
+app.get('/', (req, res) => {
     res.send("Running");
 });
 
