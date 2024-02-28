@@ -90,6 +90,11 @@ app.get('/', (req, res) => {
     res.send("Running");
 });
 
+app.get('/connectorSetup', (req, res) => {
+    if(logging) {console.log(`${new Date().toISOString()} Received new Connector Setup request`)};
+    res.json(schema);
+});
+
 app.get('/getScriptDetails/:appId', async (req, res) => {
     try {
         const { appId } = req.params;
