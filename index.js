@@ -105,6 +105,7 @@ app.get('/getScriptDetails/:appId', async (req, res) => {
         const choice = response.choices[0];
 
         if (choice.finish_reason === "length") {
+            console.log(`${new Date().toISOString()} Error: The response from OpenAI is too long for QS App {${appId}}!`);
             return res.json({ error: "The response from OpenAI is too long!" }).status(500);
         }
 
@@ -112,6 +113,7 @@ app.get('/getScriptDetails/:appId', async (req, res) => {
 
         res.json(JSON.parse(choice.message.content));
     } catch (error) {
+        console.log(`${new Date().toISOString()} An error occurred: {${error.message}}!`);
         res.json({ error: error.message || "An error occurred." }).status(500);
     }
 });
