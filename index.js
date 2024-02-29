@@ -104,6 +104,8 @@ app.get('/getScriptDetails/:appId', async (req, res) => {
         const response = await getScriptDetails(script, appId);
         const choice = response.choices[0];
 
+        if(logging) fs.writeFileSync("./received-requests/" + new Date().toISOString().split('.')[0].replace(':','-').replace(':','-') + " " + appId + ".json",JSON.stringify(choice, null, 2),'utf8');
+
         if (choice.finish_reason === "length") {
             console.log(`${new Date().toISOString()} Error: The response from OpenAI is too long for QS App {${appId}}!`);
             return res.json({ error: "The response from OpenAI is too long!" }).status(500);

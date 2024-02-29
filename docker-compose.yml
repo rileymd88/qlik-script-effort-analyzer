@@ -11,6 +11,8 @@ services:
     volumes:
       - ./.env:/usr/src/app/.env
       - ./schema.json:/usr/src/app/schema.json
+      - ./sent-requests:/usr/src/app/sent-requests
+      - ./received-requests:/usr/src/app/received-requests
   proxy:
     container_name: proxy
     image: 'jc21/nginx-proxy-manager:latest'
